@@ -1,4 +1,10 @@
-<h3>Home</h3>
-<% @users.each do |user| %>
-  <p>User: <%=link_to user.name, user %></p>
+<% @questions.each do |question| %>
+	<div id="<%= dom_id(question) %>" class="question_container" data-correct-answer-id="<%= question.correct_answer_id.blank? ? 'none' : Digest::MD5.hexdigest(question.correct_answer_id.to_s) %>">
+		<h1><%= question.content %></h1>
+		<ul>
+			<% question.answers.each do |answer| %>
+				<li><%= link_to answer.content, root_url, :class => 'answer_link', :data => {:answer_id => answer.id} %></li>
+			<% end %>
+		</ul>
+	</div>
 <% end %>

@@ -1,5 +1,8 @@
 class HomeController < ApplicationController
-  def index
-    @users = User.all
-  end
+	require 'digest'
+	
+	def index
+		@users = User.all
+		@questions = Question.all
+	end
 end

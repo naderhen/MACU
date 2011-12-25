@@ -1,0 +1,143 @@
+=> [32m[1;32m#<[0m[32mActiveAdmin::DSL:0xb99c2d4
+ @config=
+  #<ActiveAdmin::Resource:0xb47c100
+   @action_items=
+    [#<ActiveAdmin::ActionItem:0xb479aa4
+      @block=
+       #<Proc:0xb479b08@/home/naderhen/.rvm/gems/ruby-1.9.2-p290/gems/activeadmin-0.3.4/lib/active_admin/resource/action_items.rb:50>,
+      @options={:except=>[:new, :show]}>,
+     #<ActiveAdmin::ActionItem:0xb479a68
+      @block=
+       #<Proc:0xb479a7c@/home/naderhen/.rvm/gems/ruby-1.9.2-p290/gems/activeadmin-0.3.4/lib/active_admin/resource/action_items.rb:57>,
+      @options={:only=>[:show]}[1;32m>[0m[32m[0m,
+     [32m[1;32m#<[0m[32mActiveAdmin::ActionItem:0xb479a18
+      @block=
+       #<Proc:0xb479a2c@/home/naderhen/.rvm/gems/ruby-1.9.2-p290/gems/activeadmin-0.3.4/lib/active_admin/resource/action_items.rb:64>,
+      @options={:only=[1;32m>[0m[32m[0m[[1;32m:show[0m]}>],
+   @collection_actions=[],
+   @controller=[34m[4mAdmin[0m::[34m[4mQuestionsController[0m,
+   @member_actions=[],
+   @namespace=
+    [32m[1;32m#<[0m[32mActiveAdmin::Namespace:0xb5fdde4
+     @application=
+      #<ActiveAdmin::Application:0xa5451c8
+       @authentication_method=:authenticate_admin_user!,
+       @current_user_method=:current_admin_user,
+       @javascripts=["active_admin.js"],
+       @namespaces={:admin=>#<ActiveAdmin::Namespace:0xb5fdde4 ...>},
+       @site_title="Macu",
+       @stylesheets=["active_admin.css"][1;32m>[0m[32m[0m,
+     @dsl=[32m[1;32m#<[0m[32mActiveAdmin::DSL:0xb99c2d4 ...[1;32m>[0m[32m[0m,
+     @menu=
+      [32m[1;32m#<[0m[32mActiveAdmin::Menu:0xb519b08
+       @items=
+        [#<ActiveAdmin::MenuItem:0xbbb4a44
+          @cached_url={},
+          @children=[],
+          @display_if_block=
+           #<Proc:0xa43f97c@/home/naderhen/.rvm/gems/ruby-1.9.2-p290/gems/activeadmin-0.3.4/lib/active_admin/resource/menu.rb:34>,
+          @name="Answers",
+          @priority=10,
+          @url=:admin_answers_path>][1;32m>[0m[32m[0m,
+     @module_name=[32m[1;32m"[0m[32mAdmin[1;32m"[0m[32m[0m,
+     @name=[1;32m:admin[0m,
+     @resources=
+      {[32m[1;32m"[0m[32mComment[1;32m"[0m[32m[0m=>
+        [32m[1;32m#<[0m[32mActiveAdmin::Resource:0xa4e66dc
+         @action_items=
+          [#<ActiveAdmin::ActionItem:0xb88c8d0
+            @block=
+             #<Proc:0xb88c90c@/home/naderhen/.rvm/gems/ruby-1.9.2-p290/gems/activeadmin-0.3.4/lib/active_admin/resource/action_items.rb:50>,
+            @options={:except=>[:new, :show]}[1;32m>[0m[32m[0m,
+           [32m[1;32m#<[0m[32mActiveAdmin::ActionItem:0xb88c830
+            @block=
+             #<Proc:0xb88c858@/home/naderhen/.rvm/gems/ruby-1.9.2-p290/gems/activeadmin-0.3.4/lib/active_admin/resource/action_items.rb:57>,
+            @options={:only=[1;32m>[0m[32m[0m[[1;32m:show[0m]}>,
+           [32m[1;32m#<[0m[32mActiveAdmin::ActionItem:0xb88c754
+            @block=
+             #<Proc:0xb88c768@/home/naderhen/.rvm/gems/ruby-1.9.2-p290/gems/activeadmin-0.3.4/lib/active_admin/resource/action_items.rb:64>,
+            @options={:only=[1;32m>[0m[32m[0m[[1;32m:show[0m]}>],
+         @collection_actions=[],
+         @comments=[1;36mfalse[0m,
+         @controller=[34m[4mAdmin[0m::[34m[4mCommentsController[0m,
+         @default_scope=
+          [32m[1;32m#<[0m[32mActiveAdmin::Scope:0xb864b8c
+           @id="all",
+           @name="All",
+           @scope_block=
+            #<Proc:0xb99a63c@/home/naderhen/.rvm/gems/ruby-1.9.2-p290/gems/activeadmin-0.3.4/lib/active_admin/comments.rb:38>,
+           @scope_method=nil[1;32m>[0m[32m[0m,
+         @member_actions=[],
+         @menu_options={[1;32m:display[0m=>[1;36mfalse[0m},
+         @namespace=[32m[1;32m#<[0m[32mActiveAdmin::Namespace:0xb5fdde4 ...[1;32m>[0m[32m[0m,
+         @options={[1;32m:namespace[0m=>[1;32m:admin[0m, [1;32m:sort_order[0m=>[32m[1;32m"[0m[32mid_desc[1;32m"[0m[32m[0m, [1;32m:as[0m=>[32m[1;32m"[0m[32mComment[1;32m"[0m[32m[0m},
+         @page_configs=
+          {[1;32m:index[0m=>
+            [32m[1;32m#<[0m[32mActiveAdmin::PageConfig:0xb5ffd9c
+             @block=
+              #<Proc:0xb7c5ca8@/home/naderhen/.rvm/gems/ruby-1.9.2-p290/gems/activeadmin-0.3.4/lib/active_admin/comments.rb:72>,
+             @options={:as=[1;32m>[0m[32m[0m[1;32m:table[0m}>},
+         @resource=
+          [34m[4mActiveAdmin[0m::Comment([35mid[0m: integer, [35mresource_id[0m: integer, [35mresource_type[0m: string, [35mauthor_id[0m: integer, [35mauthor_type[0m: string, [35mbody[0m: text, [35mcreated_at[0m: datetime, [35mupdated_at[0m: datetime, [35mnamespace[0m: string),
+         @scopes=
+          [[32m[1;32m#<[0m[32mActiveAdmin::Scope:0xb864b8c
+            @id="all",
+            @name="All",
+            @scope_block=
+             #<Proc:0xb99a63c@/home/naderhen/.rvm/gems/ruby-1.9.2-p290/gems/activeadmin-0.3.4/lib/active_admin/comments.rb:38>,
+            @scope_method=nil[1;32m>[0m[32m[0m],
+         @sidebar_sections=
+          [[32m[1;32m#<[0m[32mActiveAdmin::SidebarSection:0xb7c7c74
+            @block=
+             #<Proc:0xb7c7c38@/home/naderhen/.rvm/gems/ruby-1.9.2-p290/gems/activeadmin-0.3.4/lib/active_admin/resource/sidebars.rb:28>,
+            @name=:filters,
+            @options={:only=[1;32m>[0m[32m[0m[[1;32m:index[0m]}>],
+         @sort_order=[32m[1;32m"[0m[32mid_desc[1;32m"[0m[32m[0m,
+         @underscored_resource_name=[32m[1;32m"[0m[32mcomment[1;32m"[0m[32m[0m>,
+       [32m[1;32m"[0m[32mAnswer[1;32m"[0m[32m[0m=>
+        [32m[1;32m#<[0m[32mActiveAdmin::Resource:0xb5ff770
+         @action_items=
+          [#<ActiveAdmin::ActionItem:0xb5d9dcc
+            @block=
+             #<Proc:0xb5d9e30@/home/naderhen/.rvm/gems/ruby-1.9.2-p290/gems/activeadmin-0.3.4/lib/active_admin/resource/action_items.rb:50>,
+            @options={:except=>[:new, :show]}[1;32m>[0m[32m[0m,
+           [32m[1;32m#<[0m[32mActiveAdmin::ActionItem:0xb5d9d40
+            @block=
+             #<Proc:0xb5d9d54@/home/naderhen/.rvm/gems/ruby-1.9.2-p290/gems/activeadmin-0.3.4/lib/active_admin/resource/action_items.rb:57>,
+            @options={:only=[1;32m>[0m[32m[0m[[1;32m:show[0m]}>,
+           [32m[1;32m#<[0m[32mActiveAdmin::ActionItem:0xb5d9cc8
+            @block=
+             #<Proc:0xb5d9cdc@/home/naderhen/.rvm/gems/ruby-1.9.2-p290/gems/activeadmin-0.3.4/lib/active_admin/resource/action_items.rb:64>,
+            @options={:only=[1;32m>[0m[32m[0m[[1;32m:show[0m]}>],
+         @collection_actions=[],
+         @controller=[34m[4mAdmin[0m::[34m[4mAnswersController[0m,
+         @member_actions=[],
+         @menu_options={},
+         @namespace=[32m[1;32m#<[0m[32mActiveAdmin::Namespace:0xb5fdde4 ...[1;32m>[0m[32m[0m,
+         @options={[1;32m:namespace[0m=>[1;32m:admin[0m, [1;32m:sort_order[0m=>[32m[1;32m"[0m[32mid_desc[1;32m"[0m[32m[0m},
+         @page_configs={},
+         @plural_resource_name=[32m[1;32m"[0m[32mAnswers[1;32m"[0m[32m[0m,
+         @resource=
+          Answer([35mid[0m: integer, [35mcontent[0m: text, [35mquestion_id[0m: integer, [35mcreated_at[0m: datetime, [35mupdated_at[0m: datetime),
+         @resource_name=[32m[1;32m"[0m[32mAnswer[1;32m"[0m[32m[0m,
+         @sidebar_sections=
+          [[32m[1;32m#<[0m[32mActiveAdmin::SidebarSection:0xb5d9c64
+            @block=
+             #<Proc:0xb5d9c3c@/home/naderhen/.rvm/gems/ruby-1.9.2-p290/gems/activeadmin-0.3.4/lib/active_admin/resource/sidebars.rb:28>,
+            @name=:filters,
+            @options={:only=[1;32m>[0m[32m[0m[[1;32m:index[0m]}>],
+         @sort_order=[32m[1;32m"[0m[32mid_desc[1;32m"[0m[32m[0m,
+         @underscored_resource_name=[32m[1;32m"[0m[32manswer[1;32m"[0m[32m[0m>,
+       [32m[1;32m"[0m[32mQuestion[1;32m"[0m[32m[0m=>[32m[1;32m#<[0m[32mActiveAdmin::Resource:0xb47c100 ...[1;32m>[0m[32m[0m}>,
+   @options={[1;32m:namespace[0m=>[1;32m:admin[0m, [1;32m:sort_order[0m=>[32m[1;32m"[0m[32mid_desc[1;32m"[0m[32m[0m},
+   @page_configs={},
+   @resource=
+    Question([35mid[0m: integer, [35mcontent[0m: text, [35mcorrect_answer_id[0m: integer, [35mcorrect_answer_response[0m: text, [35mwrong_answer_response[0m: text, [35mcreated_at[0m: datetime, [35mupdated_at[0m: datetime),
+   @sidebar_sections=
+    [[32m[1;32m#<[0m[32mActiveAdmin::SidebarSection:0xb4799b4
+      @block=
+       #<Proc:0xb47998c@/home/naderhen/.rvm/gems/ruby-1.9.2-p290/gems/activeadmin-0.3.4/lib/active_admin/resource/sidebars.rb:28>,
+      @name=:filters,
+      @options={:only=[1;32m>[0m[32m[0m[[1;32m:index[0m]}>],
+   @sort_order=[32m[1;32m"[0m[32mid_desc[1;32m"[0m[32m[0m,
+   @underscored_resource_name=[32m[1;32m"[0m[32mquestion[1;32m"[0m[32m[0m>>
