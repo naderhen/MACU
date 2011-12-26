@@ -1,7 +1,7 @@
 var current_score = 0;
 
 function getNext(){
-	$('.question_container:first').show().animate({ left: 0 },'slow');
+	$('.question_container:first').show().animate({ left: 0 }, '3000', 'swing');
 }
 
 $(document).ready(function() {
