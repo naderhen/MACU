@@ -9,10 +9,11 @@ Macu::Application.routes.draw do
 
   devise_for :users
   resources :users, :only => :show
+  resources :questions, :only => :show
 
 
   # The priority is based upon order of creation:
-  # first created -> highest priority.
+  # first created s-> highest priority.
 
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'

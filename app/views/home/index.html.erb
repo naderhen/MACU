@@ -1,4 +1,4 @@
-<% @questions.each do |question| %>
+<% @questions.shuffle.each do |question| %>
 	<div id="<%= dom_id(question) %>" class="question_container" data-correct-answer-id="<%= question.correct_answer_id.blank? ? 'none' : Digest::MD5.hexdigest(question.correct_answer_id.to_s) %>">
 		<h1><%= question.content %></h1>
 		<ul>
