@@ -12,14 +12,13 @@ ActiveAdmin.register Question do
 
   	form do |f|
 	  f.inputs "Details" do
-	  	f.input :content
+	  	f.input :content, :as => :string
 	  	f.input :correct_answer_id, :as => :select, :collection => f.object.answers
-	  	f.input :correct_answer_response
-	  	f.input :wrong_answer_response
+	  	f.input :correct_answer_response, :input_html => { :rows => 2 }
 	  end
 
 	  f.has_many :answers do |answer|
-	     answer.inputs
+	     answer.input :content, :as => :string
 	  end
 
 	  f.buttons

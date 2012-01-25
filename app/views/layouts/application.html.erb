@@ -13,21 +13,19 @@
   </head>
   <body class="<%= params[:controller] %>">
     <div id="container" class="container">
-      <header>
-        <nav>
-          <ul class="hmenu">
-            <%= render 'shared/navigation' %>
-          </ul>
-        </nav>
-        <%- flash.each do |name, msg| -%>
-          <%= content_tag :div, msg, :id => "flash_\#{name}" if msg.is_a?(String) %>
-        <%- end -%>
-      </header>
-      <div id="main" role="main">
-        <%= yield %>
+      <div id="frame_container" class="cfx">
+        <div id="frame_left"></div>
+        <div id="frame_center">
+          <div id="content">
+            <%= yield %>
+          </div>
+        </div>
+        <div id="frame_right"></div>
       </div>
-      <footer>
-      </footer>
+      <div id="footer">
+        <a href="logo" id="logo"><%= image_tag('logo.png') %></a>
+        <div id="hills"></div>
+      </div>
     </div> <!--! end of #container -->
   </body>
 </html>

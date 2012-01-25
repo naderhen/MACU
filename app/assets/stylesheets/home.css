@@ -1,0 +1,158 @@
+.cfx {
+	display: block;
+	min-width: 1px;
+	}
+
+.cfx::after {
+	content: ".";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+	}
+
+body {
+	background-image: url('/assets/bg.jpg');
+	background-color: #febe57;
+	background-repeat: repeat-x;
+	}
+
+a {
+	text-decoration: none !important;
+	}
+
+#frame_container {
+	position: relative;
+	width: 852px;
+	height: 779px;
+	margin: 0 auto;
+	}
+
+#frame_left {
+	position:absolute;
+	top: 0; left: -172px;
+	width: 180px;
+	height: 779px;
+	background-image: url('/assets/frame_left.png');
+	background-repeat: no-repeat;
+	}
+
+#frame_center {
+	width: 852px;
+	height: 100%;
+	background-image: url('/assets/frame.png');
+	background-repeat: no-repeat;
+	}
+
+#frame_right {
+	position: absolute;
+	top: 0; right: -179px;
+	width: 190px;
+	height: 779px;
+	background-image: url('/assets/frame_right.png');
+	background-repeat: no-repeat;
+	background-position: -20px 0px;
+	}
+
+#content {
+	position: absolute;
+	top: 90px; left: 34px;
+	width: 780px;
+	height: 490px;
+	overflow: hidden;
+	}
+
+#footer {
+	position: relative;
+	width: 1068px;
+	height: 79px;
+	margin: 0 auto;
+	padding: 0;
+	background-image: url('/assets/hills.png');
+	background-repeat: no-repeat;
+	text-align: center;
+	}
+
+#logo { margin: -100px 0 0 0; }
+
+
+/* BUTTONS */
+
+.btn {
+	display: block;
+	position: relative;
+	width: 195px;
+	height: 60px;
+	background-image: url('/assets/buttons.png');
+	background-repeat: no-repeat;
+	text-indent: -9999px;
+	}
+
+.get_started { background-position: 0 0; }
+
+.get_started:hover { background-position: 0 -100px; }
+
+.take_the_quiz {
+	width: 235px;
+	height: 70px;
+	background-position: -1355px 0; 
+	}
+
+.take_the_quiz:hover { background-position: -1355px -100px; }
+
+/* PAGES */
+
+.block {
+	display: none;
+	width: 100%;
+	height: 100%;
+	}
+
+.the_mountain_america {
+	position: relative;
+	width: 379px;
+	height: 35px;
+	background-image: url('/assets/the_mountain_america.png');
+	background-repeat: no-repeat;
+	text-indent: -9999px;
+	}
+
+.retirement {
+	position: relative;
+	width: 532px;
+	height: 70px;
+	background-image: url('/assets/retirement.png');
+	background-repeat: no-repeat;
+	text-indent: -9999px;
+	}
+
+.quiz {
+	position: relative;
+	width: 423px;
+	height: 149px;
+	background-image: url('/assets/quiz.png');
+	background-repeat: no-repeat;
+	text-indent: -9999px;
+	}
+
+
+
+/* QUESTION PAGE */
+
+.answer_choice {
+	display: block;
+	height: 50px;
+	margin: 20px 0;
+	color: black !important;
+	font-size: 18px;
+	}
+
+.answer_index {
+	width: 100px;
+	margin: 0 25px 0 0;
+	padding: 10px;
+	color: white;
+	font-size: 16px;
+	font-weight: bold;
+	background-color: red;
+	}
