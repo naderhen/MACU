@@ -57,7 +57,8 @@ $(document).ready(function() {
 	});
 
 	$('.question_container .submit_answer').live('click', function() {
-		var container = $(this).parents('.question_container');
+		var button = $(this),
+			container = $(this).parents('.question_container');
 
 		$.each(container.find('.answer_choice'), function() {
 			$(this).attr('data-answer-hash', MD5_hexhash($(this).attr('data-answer-id')));	
@@ -80,6 +81,27 @@ $(document).ready(function() {
 			wrong_choices.append('<div class="mark ex"></div>');
 			wrong_choices.find('p').css('text-decoration', 'line-through');
 		};
+
+		setTimeout(function(){
+			var correct_offset = correct_choice.position().top,
+				response_text = container.find('.response_text')
+				answer_section = container.find('.answers');
+
+			wrong_choices.animate(
+				{
+					opacity: 0
+				}, 'slow').remove();
+
+			correct_choice.css({
+				'position': 'absolute',
+				'top': correct_offset
+			});
+
+			correct_choice.animate({ top: 98 }, 'slow', function(){ response_text.appendTo(answer_section).fadeIn('slow'); });
+
+			button.replaceWith('<a href="#" class="btn next next_question">Next Question</a>');
+
+		}, 1000);
 		return false;
 	});
 });

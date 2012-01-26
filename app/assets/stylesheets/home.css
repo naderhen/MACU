@@ -115,6 +115,9 @@ a {
 
 .submit_answer:hover { background-position: -460px -100px; }
 
+.next_question { margin: 0; background-position: -231px 0; }
+.next_question:hover { background-position: -231px -100px; }
+
 /* FORMS */
 
 #content form {
@@ -207,6 +210,8 @@ a {
 	background-image: url('/assets/over_question.png');
 	}
 
+.answers { height: 260px; }
+
 .answer_choice {
 	position: relative;
 	display: block;
@@ -225,6 +230,8 @@ a {
 	font-weight: bold;
 	background-color: red;
 	}
+
+.response_text { display: none; }
 
 /* Answer Marks */
 

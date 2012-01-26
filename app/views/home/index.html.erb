@@ -18,9 +18,8 @@
 	</div>
 </div>
 
-
 <% @questions.shuffle.each_with_index do |question, index| %>
-	<div id="<%= dom_id(question) %>" class="question_container block" data-correct-answer-id="<%= question.correct_answer_id.blank? ? 'none' : Digest::MD5.hexdigest(question.correct_answer_id.to_s) %>" data-selected-hash="">
+	<div id="<%= dom_id(question) %>" class="question_container block" data-question-id="<%= question.id %>" data-correct-answer-id="<%= question.correct_answer_id.blank? ? 'none' : Digest::MD5.hexdigest(question.correct_answer_id.to_s) %>" data-selected-hash="">
 		<div class="question_number">
 			<h2>QUESTION <%= index + 1 %></h2>
 			<div class="over_grunge"></div>
@@ -34,6 +33,9 @@
 			<% end %>
 		</div>
 		<a href="#" class="btn submit_answer">Submit Answer</a>
+		<div class="response_text">
+			<p><%= question.correct_answer_response %></p>
+		</div>
 	</div>
 <% end %>
 
