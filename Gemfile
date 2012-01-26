@@ -29,3 +29,5 @@ gem 'sass-rails',   '~> 3.1.5'
 gem "meta_search", '>= 1.1.0.pre'
 gem "activeadmin"
 gem 'pry', :group => :development 
+gem 'foreman', '0.27.0'
+gem 'thin', :group => :production
