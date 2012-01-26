@@ -1,4 +1,5 @@
 Macu::Application.routes.draw do
+  break if ARGV.join.include? 'assets:precompile'
   resources :submissions
 
   ActiveAdmin.routes(self)
