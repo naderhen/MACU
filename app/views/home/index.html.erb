@@ -7,19 +7,24 @@
 		<h3>Play to win a Kindle Fire, Xbox, Jazz Tickets or one of many other exciting prizes!</h3>
 		<p>Test your knowledge with our Quiz and share your Retirement "Bucket List".</p>
 		<p>Then we'll give you an opportunity to redeem your unique prize code. Click below to get started.</p>
-		<a href="#" class="btn get_started">GET STARTED</a>
+		<a href="#" class="btn next get_started">GET STARTED</a>
 	</div>
 </div>
 
 <div id="information" class="block">
-	<h1>FORM GOES HERE</h1>
-	<a href="#" class="btn take_the_quiz">Take The Quiz</a>
+	<h2>First, fill in your information below...</h2>
+	<div id="information_form">
+		<%= render 'submissions/form', :locals => {:submission => @submission, :test => 'test'} %>
+	</div>
 </div>
 
 
 <% @questions.shuffle.each_with_index do |question, index| %>
-	<div id="<%= dom_id(question) %>" class="question_container block" data-correct-answer-id="<%= question.correct_answer_id.blank? ? 'none' : Digest::MD5.hexdigest(question.correct_answer_id.to_s) %>">
-		<div class="question_number">QUESTION <%= index + 1 %></div>
+	<div id="<%= dom_id(question) %>" class="question_container block" data-correct-answer-id="<%= question.correct_answer_id.blank? ? 'none' : Digest::MD5.hexdigest(question.correct_answer_id.to_s) %>" data-selected-hash="">
+		<div class="question_number">
+			<h2>QUESTION <%= index + 1 %></h2>
+			<div class="over_grunge"></div>
+		</div>
 		<div class="question_content"><%= question.content %></div>
 		<div class="answers">
 			<% question.answers.shuffle.each_with_index do |answer, index| %>
@@ -28,5 +33,25 @@
 				</a>
 			<% end %>
 		</div>
+		<a href="#" class="btn submit_answer">Submit Answer</a>
 	</div>
 <% end %>
+
+<div id="grade_section" class="block">
+	<p>You have successfully completed The Mountain America Retirement Quiz.</p>
+	<p class="grade_text">You got <span id="grade_amount"></span> questions right!</p>
+
+	<p>Not too shabby - You scored a "<span id="grade_letter"></span>".</p>
+
+	<p>Looks like you've got the retirement fundamentals down pat.</p>
+	<p>But remember - there's always room for improvement.</p>
+	<p>If you'd like, you can retake the Retirement Quiz now.</p>
+	<p>Or, if you have a Prize Code, click continue to see if you've won!</p>
+
+	<a href="/" class="btn retake_quiz">Retake Quiz</a>
+	<a href="#" class="btn next continue">Continue</a>
+</div>
+
+<div id="promo_container" class="block">
+PROMO SECTION
+</div>

@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>First name:</b>
+  <%= @submission.first_name %>
+</p>
+
+<p>
+  <b>Last name:</b>
+  <%= @submission.last_name %>
+</p>
+
+<p>
+  <b>Email:</b>
+  <%= @submission.email %>
+</p>
+
+<p>
+  <b>Branch:</b>
+  <%= @submission.branch %>
+</p>
+
+<p>
+  <b>Score:</b>
+  <%= @submission.score %>
+</p>
+
+<p>
+  <b>Prize code:</b>
+  <%= @submission.prize_code %>
+</p>
+
+
+<%= link_to 'Edit', edit_submission_path(@submission) %> |
+<%= link_to 'Back', submissions_path %>

@@ -23,7 +23,7 @@ gem "guard-livereload", ">= 0.3.0", :group => :development
 gem "guard-rspec", ">= 0.4.3", :group => :development
 gem "guard-cucumber", ">= 0.6.1", :group => :development
 gem "devise", ">= 1.5.0"
-gem "twitter-bootstrap-rails"
+# gem "twitter-bootstrap-rails"
 gem "rails-footnotes", ">= 3.7", :group => :development
 gem 'sass-rails',   '~> 3.1.5'
 gem "meta_search", '>= 1.1.0.pre'

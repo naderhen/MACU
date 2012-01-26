@@ -1,0 +1,24 @@
+<%= form_for @submission, :remote => true do |f| %>
+  <% if @submission.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@submission.errors.count, "error") %> prohibited this submission from being saved:</h2>
+
+      <ul>
+      <% @submission.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="form_row">
+    <%= f.text_field :first_name %>
+    <%= f.text_field :last_name, :class => 'right' %>
+  </div>
+  <div class="form_row">
+    <%= f.text_field :email %>
+    <%= f.text_field :branch, :class => 'right' %>
+  </div>
+
+  <a href="#" class="btn take_the_quiz submit">Take The Quiz</a>
+
+<% end %>
