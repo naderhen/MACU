@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Code:</b>
+  <%= @promo.code %>
+</p>
+
+<p>
+  <b>Prize:</b>
+  <%= @promo.prize %>
+</p>
+
+<p>
+  <b>Redeemed by:</b>
+  <%= @promo.redeemed_by %>
+</p>
+
+
+<%= link_to 'Edit', edit_promo_path(@promo) %> |
+<%= link_to 'Back', promos_path %>

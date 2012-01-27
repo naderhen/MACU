@@ -118,6 +118,9 @@ a {
 .next_question { margin: 0; background-position: -231px 0; }
 .next_question:hover { background-position: -231px -100px; }
 
+.did_i_win { background-position: -910px 0; }
+.did_i_win:hover { background-position: -910px -100px; }
+
 /* FORMS */
 
 #content form {

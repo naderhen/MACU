@@ -1,6 +1,20 @@
 Macu::Application.routes.draw do
+  resources :promos do
+    member do
+      get 'check'
+    end
+  end
+
   break if ARGV.join.include? 'assets:precompile'
-  resources :submissions
+
+  resources :submissions do
+    member do
+      post 'bucket_list'
+    end
+  end
+
+  match 'check/:code/:user_id' => 'promos#check'
+  match 'bucket_list/:id' => 'submissions#bucket_list'
 
   ActiveAdmin.routes(self)
 

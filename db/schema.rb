@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120126012731) do
+ActiveRecord::Schema.define(:version => 20120127043902) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.integer  "resource_id",   :null => false
@@ -53,6 +53,15 @@ ActiveRecord::Schema.define(:version => 20120126012731) do
     t.datetime "updated_at"
   end
 
+  create_table "promos", :force => true do |t|
+    t.string   "code"
+    t.string   "prize"
+    t.string   "redeemed_by"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.boolean  "active",      :default => true
+  end
+
   create_table "questions", :force => true do |t|
     t.text     "content"
     t.integer  "correct_answer_id"
@@ -71,6 +80,8 @@ ActiveRecord::Schema.define(:version => 20120126012731) do
     t.string   "prize_code"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "promo_code"
+    t.text     "bucket_list"
   end
 
   create_table "users", :force => true do |t|

@@ -6,6 +6,12 @@ function getNext(current){
 	next.fadeIn('slow');
 }
 
+function updateGrade(score){
+	var container  = $('#grade_section');
+
+	container.find('#grade_amount').html(score + '/12');
+}
+
 $(document).ready(function() {
 	// Init
 	$('#homepage').fadeIn('slow');
@@ -17,7 +23,9 @@ $(document).ready(function() {
 	});
 
 	$('.new_submission .submit').click(function(){
-		var inputs = $('.new_submission input');
+		var form = $(this).parents('form'),
+			inputs = $('.new_submission input');
+
 		var empty = inputs.filter(function(index) {
 			return $(this).val() == '';
 		});
@@ -28,7 +36,16 @@ $(document).ready(function() {
 				$(this).addClass('error');
 			});
 		} else {
-			$(this).parents('form').submit();
+			$.ajax({
+				url: 'submissions',
+				type: 'POST',
+				data: form.serialize(),
+				dataType: 'json',
+				success: function(data) {
+					$('#content').attr('data-user-id', data.id);
+					getNext(form.parents('.block'));
+				}
+			});
 		};
 
 		return false;
@@ -73,6 +90,7 @@ $(document).ready(function() {
 			correct_choice.append('<div class="mark check"></div>');
 			wrong_choices.css('opacity', .5);
 			correct_amount++
+			updateGrade(correct_amount);
 		} else {
 		// WRONG
 			correct_choice.find('.mark').remove();
@@ -104,4 +122,49 @@ $(document).ready(function() {
 		}, 1000);
 		return false;
 	});
+
+	$('#bucket_list .continue').live('click', function() {
+		var self = $(this),
+			user_id = $('#content').attr('data-user-id'),
+			text = $('#bucket_list_text').val();
+		
+		if (text.length) {
+			$.ajax({
+				url: 'bucket_list/' + user_id,
+				type: 'POST',
+				data: {content: text},
+				dataType: 'json',
+				success: function(data) {
+					if (data) {
+						getNext(self.parents('.block'));
+					}
+				}
+			});	
+		} else {
+			$('#bucket_list_text').addClass('error');
+		}
+		return false;
+		
+	});
+
+	$('.did_i_win').live('click', function() {
+		var self = $(this),
+			code = $('#promo_code').val(),
+			user_id = $('#content').attr('data-user-id');
+
+		$.ajax({
+			url: 'check/' + code + '/' + user_id,
+			dataType: 'json',
+			success: function(data) {
+				if(data) {
+					$('#prize_container').find('#prize_name').html(data.prize);
+					getNext(self.parents('.block'));
+				} else {
+					alert('sorry! this promo code is either not valid or already used.');
+				}
+			}
+		});
+		return false;
+	});
+
 });
