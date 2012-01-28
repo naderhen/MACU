@@ -13,8 +13,18 @@ function updateGrade(score){
 }
 
 $(document).ready(function() {
+
+	$('#frame_container').animate(
+		{ marginTop: '100px' },{ duration: 2000, easing: 'easeOutBack', complete: function() {
+			$('#frame_left').animate( { backgroundPosition: '0' }, 1000);
+			$('#frame_right').animate( { backgroundPosition: '-20px 0' }, 1000, function() {
+				$('#homepage').fadeIn('slow');
+			});
+			}
+		});
+
 	// Init
-	$('#homepage').fadeIn('slow');
+	
 	correct_amount = 0;
 
 	$('.next').live('click', function() {
@@ -75,15 +85,18 @@ $(document).ready(function() {
 
 	$('.question_container .submit_answer').live('click', function() {
 		var button = $(this),
-			container = $(this).parents('.question_container');
+			container = $(this).parents('.question_container'),
+			inputs = container.find('.answer_choice');
 
-		$.each(container.find('.answer_choice'), function() {
+		$.each(inputs, function() {
 			$(this).attr('data-answer-hash', MD5_hexhash($(this).attr('data-answer-id')));	
 		});
 
 		var correct_choice = container.find('.answer_choice[data-answer-hash="' + container.attr('data-correct-answer-id') + '"]'),
 			wrong_choices = correct_choice.siblings();
-
+		
+		correct_choice.removeClass('selected deselected');
+		wrong_choices.addClass('deselected');
 		// CORRECT
 		if (container.attr('data-selected-hash') === container.attr('data-correct-answer-id')) {
 			correct_choice.find('.mark').remove();
@@ -115,7 +128,7 @@ $(document).ready(function() {
 				'top': correct_offset
 			});
 
-			correct_choice.animate({ top: 98 }, 'slow', function(){ response_text.appendTo(answer_section).fadeIn('slow'); });
+			correct_choice.animate({ top: 0 }, 'slow', function(){ response_text.appendTo(answer_section).fadeIn('slow'); });
 
 			button.replaceWith('<a href="#" class="btn next next_question">Next Question</a>');
 

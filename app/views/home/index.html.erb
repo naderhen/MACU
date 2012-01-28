@@ -3,32 +3,37 @@
 	<div class="retirement">Retirement</div>
 	<div class="quiz">Quiz</div>
 	<div id="homepage_details">
-		<h2>Do you know all there is to know about retirement planning?</h2>
-		<h3>Play to win a Kindle Fire, Xbox, Jazz Tickets or one of many other exciting prizes!</h3>
-		<p>Test your knowledge with our Quiz and share your Retirement "Bucket List".</p>
-		<p>Then we'll give you an opportunity to redeem your unique prize code. Click below to get started.</p>
+		<h2 class="red arvo">Do you know all there is to know about retirement planning?</h2>
+		<h3 class="red arvo">Play to win a Kindle Fire, Xbox, Jazz Tickets or one of many other exciting prizes!</h3>
+		<p class="black arvo">Test your knowledge with our Quiz and share your Retirement "Bucket List".</p>
+		<p class="black arvo">Then we'll give you an opportunity to redeem your unique prize code. Click below to get started.</p>
 		<a href="#" class="btn next get_started">GET STARTED</a>
 	</div>
 </div>
 
 <div id="information" class="block">
-	<h2>First, fill in your information below...</h2>
+	<h2 class="huge black arvo">First, fill in your information below...</h2>
 	<div id="information_form">
 		<%= render 'submissions/form', :locals => {:submission => @submission, :test => 'test'} %>
+	</div>
+	<p id="required_span" class="red arvo">(all fields are required)</p>
+	<div id="testimonials">
+
 	</div>
 </div>
 
 <% @questions.shuffle.each_with_index do |question, index| %>
 	<div id="<%= dom_id(question) %>" class="question_container block" data-question-id="<%= question.id %>" data-correct-answer-id="<%= question.correct_answer_id.blank? ? 'none' : Digest::MD5.hexdigest(question.correct_answer_id.to_s) %>" data-selected-hash="">
 		<div class="question_number">
-			<h2>QUESTION <%= index + 1 %></h2>
+			<h2 class="black arvo">QUESTION <%= index + 1 %></h2>
 			<div class="over_grunge"></div>
 		</div>
-		<div class="question_content"><%= question.content %></div>
+		<h2 class="huge red arvo"><%= question.content %></h2>
 		<div class="answers">
 			<% question.answers.shuffle.each_with_index do |answer, index| %>
 				<a href="#" class="answer_choice" data-answer-id="<%= answer.id %>">
-					<p><span class="answer_index"><%= @indices[index + 1] %></span><%= answer.content %></p>
+					<p class="black copse answer_index <%= @indices[index + 1] %>"></p>
+					<p class="black copse"><%= answer.content %></p>
 				</a>
 			<% end %>
 		</div>
@@ -55,8 +60,8 @@
 </div>
 
 <div id="bucket_list" class="block">
-	<p>Tell us what's on your</p>
-	<p>retirement bucket list</p>
+	<p class="tell_us">Tell us what's on your</p>
+	<p class="retirement_bucket_list">retirement bucket list</p>
 	<p>What's that one thing that you've got in the back of your mind that you absolutely have to do before it's too late?</p>
 	<textarea id="bucket_list_text"></textarea>
 	<a href="/" class="btn retake_quiz">Retake Quiz</a>
@@ -64,16 +69,16 @@
 </div>
 
 <div id="promo_container" class="block">
-	<p>Enter your prize code below to</p>
-	<p>find out if you've won!</p>
+	<p class="enter_prize_code">Enter your prize code below to</p>
+	<p class="find_out">find out if you've won!</p>
 	<p>Enter your unique prize code exactly as it appears on your card.</p>
 	<input id="promo_code" size="30" type="text">
 	<a href="/" class="btn retake_quiz">Retake Quiz</a>
 	<a href="#" class="btn did_i_win">Did I Win?</a>
 </div>
 
-<div id="prize_container" class="black">
-	<p>congratulations!</p>
+<div id="prize_container" class="block">
+	<p class="congratulations_text">congratulations!</p>
 	<p>You've won an awesome <span id="prize_name"></span></p>
 	<p>You should be receiving a confirmation email shortly. Your prize will be delivered directly to your branch.</p>
 	The Mountain America Retirement Quiz will be running through March 1st. So you may have another chance to win!<p>
