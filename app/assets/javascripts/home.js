@@ -14,6 +14,10 @@ function updateGrade(score){
 
 $(document).ready(function() {
 
+	$('input[placeholder], textarea[placeholder]').placeholder();
+
+	$('select').selectBox();
+
 	$('#frame_container').animate(
 		{ marginTop: '100px' },{ duration: 2000, easing: 'easeOutBack', complete: function() {
 			$('#frame_left').animate( { backgroundPosition: '0' }, 1000);
@@ -37,14 +41,18 @@ $(document).ready(function() {
 			inputs = $('.new_submission input');
 
 		var empty = inputs.filter(function(index) {
-			return $(this).val() == '';
+			return $(this).val() == '' || $(this).val() == 'Branch Location';
 		});
 
 		if (empty.length) {
 			inputs.removeClass('error');
+			form.find('.selectBox-dropdown').removeClass('error');
 			$.each(empty, function(){
 				$(this).addClass('error');
 			});
+			if ($('#submission_branch').val() == 'Branch Location') {
+				form.find('.selectBox-dropdown').addClass('error');
+			}
 		} else {
 			$.ajax({
 				url: 'submissions',
@@ -56,7 +64,7 @@ $(document).ready(function() {
 					getNext(form.parents('.block'));
 				}
 			});
-		};
+		};	
 
 		return false;
 	});
@@ -111,6 +119,7 @@ $(document).ready(function() {
 			wrong_choices.find('.mark').remove();
 			wrong_choices.append('<div class="mark ex"></div>');
 			wrong_choices.find('p').css('text-decoration', 'line-through');
+			updateGrade(correct_amount);
 		};
 
 		setTimeout(function(){
@@ -173,7 +182,7 @@ $(document).ready(function() {
 					$('#prize_container').find('#prize_name').html(data.prize);
 					getNext(self.parents('.block'));
 				} else {
-					alert('sorry! this promo code is either not valid or already used.');
+					self.parents('.block').find('.bad_promo').fadeIn('slow');
 				}
 			}
 		});

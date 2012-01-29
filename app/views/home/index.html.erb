@@ -17,8 +17,9 @@
 		<%= render 'submissions/form', :locals => {:submission => @submission, :test => 'test'} %>
 	</div>
 	<p id="required_span" class="red arvo">(all fields are required)</p>
-	<div id="testimonials">
-
+	<div id="feeds">
+		<h3 class="black bold arvo"><%= @feed.byline %> just told us his Bucket List dream:</h3>
+		<p class="black arvo">"<%= @feed.content %>"</p>
 	</div>
 </div>
 
@@ -33,7 +34,7 @@
 			<% question.answers.shuffle.each_with_index do |answer, index| %>
 				<a href="#" class="answer_choice" data-answer-id="<%= answer.id %>">
 					<p class="black copse answer_index <%= @indices[index + 1] %>"></p>
-					<p class="black copse"><%= answer.content %></p>
+					<p class="black copse answer_text"><%= answer.content %></p>
 				</a>
 			<% end %>
 		</div>
@@ -45,42 +46,49 @@
 <% end %>
 
 <div id="grade_section" class="block">
-	<p>You have successfully completed The Mountain America Retirement Quiz.</p>
-	<p class="grade_text">You got <span id="grade_amount"></span> questions right!</p>
+	<h2 class="red arvo">You have successfully completed The Mountain America Retirement Quiz.</h2>
+	<p class="grade_text black bevan">You got <span id="grade_amount"></span> questions right!</p>
 
-	<p>Not too shabby - You scored a "<span id="grade_letter"></span>".</p>
+	<h2 class="huge black arvo">Not too shabby - You scored a "<span id="grade_letter"></span>".</h2>
 
-	<p>Looks like you've got the retirement fundamentals down pat.</p>
-	<p>But remember - there's always room for improvement.</p>
-	<p>If you'd like, you can retake the Retirement Quiz now.</p>
-	<p>Or, if you have a Prize Code, click continue to see if you've won!</p>
+	<p class="black arvo">Looks like you've got the retirement fundamentals down pat.</p>
+	<p class="black arvo second_line">But remember - there's always room for improvement.</p>
+	<p class="black arvo">If you'd like, you can retake the Retirement Quiz now.</p>
+	<p class="black arvo">Or, if you have a Prize Code, click continue to see if you've won!</p>
 
-	<a href="/" class="btn retake_quiz">Retake Quiz</a>
-	<a href="#" class="btn next continue">Continue</a>
+	<div class="buttons">
+		<a href="/" class="btn retake_quiz">Retake Quiz</a>
+		<a href="#" class="btn next continue">Continue</a>
+	</div>
 </div>
 
 <div id="bucket_list" class="block">
 	<p class="tell_us">Tell us what's on your</p>
 	<p class="retirement_bucket_list">retirement bucket list</p>
-	<p>What's that one thing that you've got in the back of your mind that you absolutely have to do before it's too late?</p>
-	<textarea id="bucket_list_text"></textarea>
-	<a href="/" class="btn retake_quiz">Retake Quiz</a>
-	<a href="#" class="btn continue">Continue</a>
+	<h2 class="red arvo">What's that one thing that you've got in the back of your mind that you absolutely have to do before it's too late?</h2>
+	<textarea id="bucket_list_text" placeholder="When I retire I want to..."></textarea>
+	<div class="buttons">
+		<a href="/" class="btn retake_quiz">Retake Quiz</a>
+		<a href="#" class="btn continue">Continue</a>
+	</div>
 </div>
 
 <div id="promo_container" class="block">
 	<p class="enter_prize_code">Enter your prize code below to</p>
 	<p class="find_out">find out if you've won!</p>
-	<p>Enter your unique prize code exactly as it appears on your card.</p>
-	<input id="promo_code" size="30" type="text">
-	<a href="/" class="btn retake_quiz">Retake Quiz</a>
-	<a href="#" class="btn did_i_win">Did I Win?</a>
+	<h2 class="red arvo">Enter your unique prize code exactly as it appears on your card.</h2>
+	<input id="promo_code" size="30" type="text" maxlength="6">
+	<div class="buttons">
+		<a href="/" class="btn retake_quiz">Retake Quiz</a>
+		<a href="#" class="btn did_i_win">Did I Win?</a>
+	</div>
+	<h2 class="bad_promo red arvo" style="display:none;">Sorry! That promo code is either invalid or already used</h2>
 </div>
 
 <div id="prize_container" class="block">
 	<p class="congratulations_text">congratulations!</p>
-	<p>You've won an awesome <span id="prize_name"></span></p>
-	<p>You should be receiving a confirmation email shortly. Your prize will be delivered directly to your branch.</p>
-	The Mountain America Retirement Quiz will be running through March 1st. So you may have another chance to win!<p>
+	<h2 class="huge red arvo">You've won an awesome <span id="prize_name"></span></h2>
+	<p class="black arvo">You should be receiving a confirmation email shortly. Your prize will be delivered directly to your branch.</p>
+	<p class="black arvo">The Mountain America Retirement Quiz will be running through March 1st. So you may have another chance to win!<p>
 	<a href="/" class="btn retake_quiz">Retake Quiz</a>
 </div>

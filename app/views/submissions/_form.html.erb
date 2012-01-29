@@ -11,12 +11,13 @@
     </div>
   <% end %>
   <div class="form_row">
-    <%= f.text_field :first_name %>
-    <%= f.text_field :last_name, :class => 'right' %>
+    <%= f.text_field :first_name, :placeholder => 'First Name' %>
+    <%= f.text_field :last_name, :placeholder => 'Last Name', :class => 'right' %>
   </div>
   <div class="form_row">
-    <%= f.text_field :email %>
-    <%= f.text_field :branch, :class => 'right' %>
+    <%= f.text_field :email, :placeholder => 'Email' %>
+
+    <%= f.collection_select :branch, Branch.all, :name, :name, :placeholder => 'Branch Location', :class => 'right' %>
   </div>
 
   <a href="#" class="btn take_the_quiz submit">Take The Quiz</a>

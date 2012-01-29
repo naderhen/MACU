@@ -6,7 +6,7 @@ class PromosController < InheritedResources::Base
 
 		if @promo.any? &&
 			@promo.first.update_attributes(active: false)
-			@submission.update_attributes(promo_code: @promo.first.code)
+			@submission.update_attributes(promo_code: @promo.first.code, prize: @promo.first.prize)
 			respond_to do |format|
 		        format.html { redirect_to @promo.first, notice: 'Submission was successfully created.' }
 		        format.js { render json: @promo.first, status: :created, location: @promo.first }
