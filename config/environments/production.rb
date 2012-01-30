@@ -70,6 +70,7 @@ Macu::Application.configure do
     :address        => "smtp.sendgrid.net",
     :port           => "25",
     :authentication => :plain,
+    :domain         => 'macu.com',
     :user_name      => ENV['SENDGRID_USERNAME'],
     :password       => ENV['SENDGRID_PASSWORD'],
     :domain         => ENV['SENDGRID_DOMAIN']
