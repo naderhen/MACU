@@ -14,7 +14,7 @@
 
 body {
 	background-image: url('/assets/bg.jpg');
-	background-color: #febe57;
+	background-color: #f6c348;
 	background-repeat: repeat-x;
 	}
 
@@ -31,7 +31,7 @@ a {
 
 #frame_left {
 	position:absolute;
-	top: 0; left: -172px;
+	top: 0; left: -166px;
 	width: 180px;
 	height: 779px;
 	background-image: url('/assets/frame_left.png');
@@ -51,7 +51,7 @@ a {
 
 #frame_right {
 	position: absolute;
-	top: 0; right: -179px;
+	top: 0; right: -184px;
 	width: 190px;
 	height: 779px;
 	background-image: url('/assets/frame_right.png');
@@ -322,9 +322,15 @@ p { font-size: 12px; font-weight: bold; margin: 0; }
 	width: 635px;
 	margin: 0 0 25px 0;
 	font-size: 20px;
+	opacity: 0;
 	}
 
-.answer_choice.deselected { opacity: .5; }
+.answer_choice.a { margin-left: 300px; }
+.answer_choice.b { margin-left: 350px; }
+.answer_choice.c { margin-left: 400px; }
+.answer_choice.d { margin-left: 450px; }
+
+.answer_choice.deselected { opacity: .5 !important; }
 
 .answer_choice p {
 	float: left;

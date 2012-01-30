@@ -32,7 +32,7 @@
 		<h2 class="huge red arvo"><%= question.content %></h2>
 		<div class="answers">
 			<% question.answers.shuffle.each_with_index do |answer, index| %>
-				<a href="#" class="answer_choice" data-answer-id="<%= answer.id %>">
+				<a href="#" class="answer_choice <%= @indices[index + 1] %>" data-answer-id="<%= answer.id %>">
 					<p class="black copse answer_index <%= @indices[index + 1] %>"></p>
 					<p class="black copse answer_text"><%= answer.content %></p>
 				</a>
@@ -40,7 +40,7 @@
 		</div>
 		<a href="#" class="btn submit_answer">Submit Answer</a>
 		<div class="response_text">
-			<p><%= question.correct_answer_response %></p>
+			<p class="black arvo"><%= question.correct_answer_response %></p>
 		</div>
 	</div>
 <% end %>

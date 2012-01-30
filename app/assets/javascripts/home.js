@@ -4,12 +4,37 @@ function getNext(current){
 	var next = current.next('.block');
 	current.remove();
 	next.fadeIn('slow');
+	if (next.find('.answers').length) {
+		var answers = next.find('.answer_choice');
+
+		answers.animate({
+			opacity: 1,
+			marginLeft: 0
+		}, 2000);
+	};
 }
 
 function updateGrade(score){
 	var container  = $('#grade_section');
 
 	container.find('#grade_amount').html(score + '/12');
+
+	var grades = {
+		'0': 'F',
+		'1': 'D',
+		'2': 'C',
+		'3': 'C',
+		'4': 'C+',
+		'5': 'C+',
+		'6': 'B',
+		'7': 'B',
+		'8': 'B+',
+		'9': 'B+',
+		'10': 'A',
+		'11': 'A+',
+		'12': 'A+'
+	};
+	container.find('#grade_letter').html(grades[score]);
 }
 
 $(document).ready(function() {
