@@ -2,16 +2,21 @@ var current_score = 0;
 
 function getNext(current){
 	var next = current.next('.block');
-	current.remove();
-	next.fadeIn('slow');
-	if (next.find('.answers').length) {
-		var answers = next.find('.answer_choice');
+	current.animate({ marginLeft: '-5000px'}, 1000, function() {
+		$(this).remove();
+		next.css('margin-left', '780px');
+		next.animate({marginLeft: 0, opacity: 1}, 800);
+		if (next.find('.answers').length) {
+			var answers = next.find('.answer_choice');
 
-		answers.animate({
-			opacity: 1,
-			marginLeft: 0
-		}, 2000);
-	};
+			answers.animate({
+				opacity: 1,
+				marginLeft: 0
+			}, 1000);
+		};
+	})
+	
+	
 }
 
 function updateGrade(score){
@@ -21,20 +26,20 @@ function updateGrade(score){
 
 	var grades = {
 		'0': 'F',
-		'1': 'D',
-		'2': 'C',
-		'3': 'C',
-		'4': 'C+',
-		'5': 'C+',
-		'6': 'B',
-		'7': 'B',
-		'8': 'B+',
-		'9': 'B+',
+		'1': 'F',
+		'2': 'F',
+		'3': 'F',
+		'4': 'D',
+		'5': 'D',
+		'6': 'C',
+		'7': 'C',
+		'8': 'B',
+		'9': 'B',
 		'10': 'A',
-		'11': 'A+',
+		'11': 'A',
 		'12': 'A+'
 	};
-	container.find('#grade_letter').html(grades[score]);
+	container.find('#grade_letter').html('"' + grades[score] + '"');
 }
 
 $(document).ready(function() {
@@ -43,15 +48,18 @@ $(document).ready(function() {
 
 	$('select').selectBox();
 
-	$('#frame_container').animate(
-		{ marginTop: '100px' },{ duration: 2000, easing: 'easeOutBack', complete: function() {
-			$('#frame_left').animate( { backgroundPosition: '0' }, 1000);
-			$('#frame_right').animate( { backgroundPosition: '-20px 0' }, 1000, function() {
-				$('#homepage').fadeIn('slow');
+	setTimeout(function() {
+		$('#frame_container').animate(
+			{ marginTop: '70px', opacity: 1 },{ duration: 1300, easing: 'easeOutBack', complete: function() {
+				$('#frame_left').animate( { backgroundPosition: '0px 0px' }, 1000);
+				$('#frame_right').animate( { backgroundPosition: '-20px 0' }, 1000, function() {
+					$('#homepage').animate({opacity: 1},'slow');
+					$('#footer').animate({bottom: 0}, '1000');
+				});
+				}
 			});
-			}
-		});
-
+	}, 1000);
+	
 	// Init
 	
 	correct_amount = 0;
@@ -68,8 +76,7 @@ $(document).ready(function() {
 		var empty = inputs.filter(function(index) {
 			return $(this).val() == '' || $(this).val() == 'Branch Location';
 		});
-
-		if (empty.length) {
+		if (empty.length || $('#submission_branch').val() == 'Branch Location') {
 			inputs.removeClass('error');
 			form.find('.selectBox-dropdown').removeClass('error');
 			$.each(empty, function(){
@@ -135,6 +142,7 @@ $(document).ready(function() {
 			correct_choice.find('.mark').remove();
 			correct_choice.append('<div class="mark check"></div>');
 			wrong_choices.css('opacity', .5);
+			container.find('.answered_correctly').fadeIn('slow');
 			correct_amount++
 			updateGrade(correct_amount);
 		} else {
@@ -144,6 +152,7 @@ $(document).ready(function() {
 			wrong_choices.find('.mark').remove();
 			wrong_choices.append('<div class="mark ex"></div>');
 			wrong_choices.find('p').css('text-decoration', 'line-through');
+			container.find('.answered_incorrectly').fadeIn('slow');
 			updateGrade(correct_amount);
 		};
 
