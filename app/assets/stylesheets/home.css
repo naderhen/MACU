@@ -473,6 +473,7 @@ p { font-size: 12px; font-weight: bold; margin: 0; }
 
 .buttons .retake_quiz { margin: 0 25px 0 0; }
 
+.bad_promo { margin: 20px 0 0 0; }
 
 #promo_container { padding: 50px 0 0 0; text-align: center; }
 

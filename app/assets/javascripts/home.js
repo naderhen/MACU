@@ -46,7 +46,7 @@ function updateGrade(score){
 		'10': 'A',
 		'11': 'A',
 		'12': 'A+'
-	};
+	};	
 
 	container.find('#grade_letter').html('"' + grades[score] + '"');
 }
