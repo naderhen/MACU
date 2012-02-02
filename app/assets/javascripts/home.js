@@ -13,14 +13,22 @@ function getNext(current){
 				opacity: 1,
 				marginLeft: 0
 			}, 1000);
-		};
+		}
+
+		if (next.attr('id') == 'information') {
+			$('#feed_wrapper').cycle({
+				fx: 'fade',
+				width: '558px'
+			});
+		}
 	})
 	
 	
 }
 
 function updateGrade(score){
-	var container  = $('#grade_section');
+	var container  = $('#grade_section'),
+		text = '';
 
 	container.find('#grade_amount').html(score + '/12');
 
@@ -39,6 +47,7 @@ function updateGrade(score){
 		'11': 'A',
 		'12': 'A+'
 	};
+
 	container.find('#grade_letter').html('"' + grades[score] + '"');
 }
 
@@ -50,11 +59,11 @@ $(document).ready(function() {
 
 	setTimeout(function() {
 		$('#frame_container').animate(
-			{ marginTop: '70px', opacity: 1 },{ duration: 1300, easing: 'easeOutBack', complete: function() {
+			{ marginTop: '70px', opacity: 1 },{ duration: 1300, easing: 'swing', complete: function() {
 				$('#frame_left').animate( { backgroundPosition: '0px 0px' }, 1000);
 				$('#frame_right').animate( { backgroundPosition: '-20px 0' }, 1000, function() {
 					$('#homepage').animate({opacity: 1},'slow');
-					$('#footer').animate({bottom: 0}, '1000');
+					$('#footer').animate({bottom: 0}, '1000', function() { $('#logo').fadeIn(2000);});
 				});
 				}
 			});
@@ -74,9 +83,21 @@ $(document).ready(function() {
 			inputs = $('.new_submission input');
 
 		var empty = inputs.filter(function(index) {
-			return $(this).val() == '' || $(this).val() == 'Branch Location';
+			if ($(this).attr('id') == 'submission_email') {
+				var email_check = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,6}$/i;
+
+				return !email_check.test($(this).val());
+			} else if ($(this).attr('id') == 'submission_branch') {
+				return $(this).val() != 'Branch Location';
+			} else if ($(this).val() == '') {
+				return true;
+			} else {
+				return false;
+			}
 		});
+
 		if (empty.length || $('#submission_branch').val() == 'Branch Location') {
+			$('#required_span').animate({opacity: 1}, 500);
 			inputs.removeClass('error');
 			form.find('.selectBox-dropdown').removeClass('error');
 			$.each(empty, function(){
@@ -216,7 +237,7 @@ $(document).ready(function() {
 					$('#prize_container').find('#prize_name').html(data.prize);
 					getNext(self.parents('.block'));
 				} else {
-					self.parents('.block').find('.bad_promo').fadeIn('slow');
+					self.parents('.block').find('.bad_promo').animate({opacity: 1},'slow');
 				}
 			}
 		});

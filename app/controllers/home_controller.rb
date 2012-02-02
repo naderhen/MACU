@@ -4,7 +4,7 @@ class HomeController < ApplicationController
 	def index
 		@users = User.all
 		@questions = Question.all.sample(1)
-		@feed = Feed.all.sample(1).first
+		@feeds = Feed.all
 		@indices = {
 			1 => 'a',
 			2 => 'b',
