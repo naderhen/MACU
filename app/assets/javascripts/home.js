@@ -45,8 +45,30 @@ function updateGrade(score){
 		'9': 'B',
 		'10': 'A',
 		'11': 'A',
-		'12': 'A+'
+		'12': 'A'
 	};	
+
+	if (grades[score] == 'A') {
+		$('.grade_replacement1').html('High Five! You scored an ' + grades[score]);
+		$('.grade_replacement2').html('You passed this quiz with flying colors right at the top of the class.');
+		$('.grade_replacement3').html('Looks like we\'ve got ourselves on true retirement braniac!');
+	} else if ( grades[score] == 'B') {
+		$('.grade_replacement1').html('Nice Work! You scored a ' + grades[score]);
+		$('.grade_replacement2').html('Give yourself a pat on the back.');
+		$('.grade_replacement3').html('You’re understanding of retirement savings is impressive.');
+	} else if (grades[score] == 'C') {
+		$('.grade_replacement1').html('Not too shabby. You scored a ' + grades[score]);
+		$('.grade_replacement2').html('Looks like you’ve got the retirement fundamentals down pat.');
+		$('.grade_replacement3').html('But remember – there\'s always room for improvement.');
+	} else if (grades[score] == 'D') {
+		$('.grade_replacement1').html('We know you\'ll rally next time. You scored a ' + grades[score]);
+		$('.grade_replacement2').html('Check out the links below to learn more about the fundamentals of Retirement Planning:');
+		$('.grade_replacement3').html('<a href="http://www.ssa.gov/retirement/" target="_blank">http://www.ssa.gov/retirement/</a><a href="http://www.usa.gov/Topics/Seniors/Retirement.shtml" target="_blank">http://www.usa.gov/Topics/Seniors/Retirement.shtml</a>');
+	} else {
+		$('.grade_replacement1').html('Not so hot.');
+		$('.grade_replacement2').html('Unfortunately you didn’t pass the quiz. But it’s true what they say, practice does indeed make perfect. Brush up on Retirement 101 with these resources:');
+		$('.grade_replacement3').html('<a href="http://www.ssa.gov/retirement/" target="_blank">http://www.ssa.gov/retirement/</a><a href="http://www.usa.gov/Topics/Seniors/Retirement.shtml" target="_blank">http://www.usa.gov/Topics/Seniors/Retirement.shtml</a>');
+	}
 
 	container.find('#grade_letter').html('"' + grades[score] + '"');
 }

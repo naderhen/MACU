@@ -449,7 +449,7 @@ p { font-size: 12px; font-weight: bold; margin: 0; }
 .grade_text {
 	font-size: 69px;
 	font-weight: bold;
-	line-height: 90px;
+	line-height: 75px;
 	text-transform: uppercase;
 	text-shadow: 6px 7px 0px #FFF;
 	filter: dropshadow(color=#FFF, offx=2, offy=2);
@@ -543,3 +543,5 @@ p { font-size: 12px; font-weight: bold; margin: 0; }
 #prize_container { padding: 50px 0 0 0; text-align: center; }
 
 #bucket_list { text-align: center; }
+
+.grade_replacement3 a { display: block; }
