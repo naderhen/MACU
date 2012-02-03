@@ -21,6 +21,10 @@ function getNext(current){
 				width: '558px'
 			});
 		}
+
+		if (next.find('select').length) {
+			$('select').selectBox();
+		}
 	})
 	
 	
@@ -66,7 +70,7 @@ function updateGrade(score){
 		$('.grade_replacement3').html('<a href="http://www.ssa.gov/retirement/" target="_blank">http://www.ssa.gov/retirement/</a><a href="http://www.usa.gov/Topics/Seniors/Retirement.shtml" target="_blank">http://www.usa.gov/Topics/Seniors/Retirement.shtml</a>');
 	} else {
 		$('.grade_replacement1').html('Not so hot.');
-		$('.grade_replacement2').html('Unfortunately you didn’t pass the quiz. But it’s true what they say, practice does indeed make perfect. Brush up on Retirement 101 with these resources:');
+		$('.grade_replacement2').html('Practice does indeed make perfect. Brush up on Retirement 101 with these resources: ');
 		$('.grade_replacement3').html('<a href="http://www.ssa.gov/retirement/" target="_blank">http://www.ssa.gov/retirement/</a><a href="http://www.usa.gov/Topics/Seniors/Retirement.shtml" target="_blank">http://www.usa.gov/Topics/Seniors/Retirement.shtml</a>');
 	}
 
@@ -76,8 +80,6 @@ function updateGrade(score){
 $(document).ready(function() {
 
 	$('input[placeholder], textarea[placeholder]').placeholder();
-
-	$('select').selectBox();
 
 	setTimeout(function() {
 		$('#frame_container').animate(
@@ -216,7 +218,11 @@ $(document).ready(function() {
 
 			correct_choice.animate({ top: 0 }, 'slow', function(){ response_text.appendTo(answer_section).fadeIn('slow'); });
 
-			button.replaceWith('<a href="#" class="btn next next_question">Next Question</a>');
+			if (container.next().find('.answers').length) {
+				button.replaceWith('<a href="#" class="btn next next_question">Next Question</a>');
+			} else {
+				button.replaceWith('<a href="#" class="btn next finish_quiz">Finish Quiz</a>');
+			}
 
 		}, 1000);
 		return false;

@@ -13,7 +13,7 @@
 
 <div id="information" class="block">
 	<h2 class="huge black arvo">First, fill in your information below...</h2>
-	<div id="information_form">
+	<div id="information_form" class="cfx">
 		<%= render 'submissions/form', :locals => {:submission => @submission, :test => 'test'} %>
 	</div>
 	<p id="required_span" class="red arvo">(all fields are required)</p>
@@ -21,7 +21,7 @@
 		<div id="feed_wrapper">
 			<% @feeds.each do |feed| %>
 				<div class="feed_container">
-					<h3 class="black copse"><%= feed.byline %> just told us his Bucket List dream:</h3>
+					<h3 class="black copse"><%= feed.byline %></h3>
 					<p class="black copse">"<%= feed.content %>"</p>
 				</div>
 			<% end %>
@@ -77,7 +77,9 @@
 	<p class="tell_us">Tell us what's on your</p>
 	<p class="retirement_bucket_list">retirement bucket list</p>
 	<h2 class="red arvo">What's that one thing that you've got in the back of your mind<br /> that you absolutely have to do before it's too late?</h2>
-	<textarea id="bucket_list_text" placeholder="When I retire I want to..."></textarea>
+	<div id="textarea_wrapper">
+		<textarea id="bucket_list_text" placeholder="When I retire I want to..."></textarea>
+	</div>
 	<div class="buttons">
 		<a href="/" class="btn retake_quiz">Retake Quiz</a>
 		<a href="#" class="btn continue">Continue</a>
@@ -88,7 +90,9 @@
 	<p class="enter_prize_code">Enter your prize code below to</p>
 	<p class="find_out">find out if you've won!</p>
 	<h2 class="red arvo">Enter your unique prize code exactly as it appears on your card.</h2>
-	<input id="promo_code" size="30" type="text" maxlength="6">
+	<div id="promo_code_wrapper">
+		<input id="promo_code" size="30" type="text" maxlength="6">
+	</div>
 	<h2 class="bad_promo red arvo" style="opacity:0;">Sorry! That promo code is either invalid or already used</h2>
 	<div class="buttons">
 		<a href="/" class="btn retake_quiz">Retake Quiz</a>
@@ -99,7 +103,9 @@
 <div id="prize_container" class="block">
 	<p class="congratulations_text">congratulations!</p>
 	<h2 class="huge red arvo">You've won an awesome <span id="prize_name"></span></h2>
-	<p class="black arvo">You should be receiving a confirmation email shortly. Your prize will be delivered directly to your branch.</p>
-	<p class="black arvo">The Mountain America Retirement Quiz will be running through March 1st. So you may have another chance to win!<p>
+	<p class="black arvo">You should be receiving a confirmation email shortly.</p>
+	<p class="black arvo">Your prize will be delivered directly to your branch.</p>
+	<p class="black arvo">The Mountain America Retirement Quiz will be running through March 1st.</p>
+	<p class="black arvo">So you may have another chance to win!<p>
 	<a href="/" class="btn retake_quiz">Retake Quiz</a>
 </div>
