@@ -314,7 +314,7 @@ p { font-size: 12px; font-weight: bold; margin: 0;line-height: 12px; }
 #feeds {
 	width: 100%;
 	height: 120px;
-	margin: 15px 0 0 0;
+	margin: 0 0 0 0;
 	border-top: 3px solid #ba0f39;
 	border-bottom: 3px solid #ba0f39;
 	}
