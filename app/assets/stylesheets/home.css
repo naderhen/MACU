@@ -22,8 +22,6 @@ body {
 	background-repeat: repeat-x;
 	}
 
-p, h1, h2, h3 { overflow: auto !important; }
-
 a {
 	text-decoration: none !important;
 	}
