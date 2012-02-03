@@ -69,7 +69,7 @@ function updateGrade(score){
 		$('.grade_replacement2').html('Check out the links below to learn more about the fundamentals of Retirement Planning:');
 		$('.grade_replacement3').html('<a href="http://www.ssa.gov/retirement/" target="_blank">http://www.ssa.gov/retirement/</a><a href="http://www.usa.gov/Topics/Seniors/Retirement.shtml" target="_blank">http://www.usa.gov/Topics/Seniors/Retirement.shtml</a>');
 	} else {
-		$('.grade_replacement1').html('Not so hot.');
+		$('.grade_replacement1').html('Not so hot. You didn\'t pass the quiz.');
 		$('.grade_replacement2').html('Practice does indeed make perfect. Brush up on Retirement 101 with these resources: ');
 		$('.grade_replacement3').html('<a href="http://www.ssa.gov/retirement/" target="_blank">http://www.ssa.gov/retirement/</a><a href="http://www.usa.gov/Topics/Seniors/Retirement.shtml" target="_blank">http://www.usa.gov/Topics/Seniors/Retirement.shtml</a>');
 	}

@@ -1,3 +1,5 @@
+/* @override http://macuquiz.herokuapp.com/assets/application-df2efab2f21545413f7fe24a96cd4c33.css */
+
 *:focus {outline: none !important;
 	box-shadow: none !important;
 	-webkit-box-shadow: none !important;
@@ -69,7 +71,7 @@ a {
 #content {
 	position: absolute;
 	top: 115px; left: 66px;
-	width: 726px;
+	width: 706px;
 	height: 462px;
 	overflow: hidden;
 	}
@@ -125,11 +127,14 @@ a {
 	width: 235px;
 	height: 70px;
 	background-position: -1355px 0; 
+	margin-top: 2px;
 	}
 
 .take_the_quiz:hover { background-position: -1355px -100px; }
 
 .retake_quiz { background-position: -1132px 0; }
+
+
 .retake_quiz:hover { background-position: -1132px -100px; }
 
 .continue { background-position: -683px 0; }
@@ -139,7 +144,8 @@ a {
 	opacity: 0;
 	margin: 0;
 	background-position: -460px 0;
-	}
+	top: 375px;
+}
 
 .submit_answer:hover { background-position: -460px -100px; }
 
@@ -152,6 +158,7 @@ a {
 .finish_quiz {
 	background-image: url('/assets/finishquiz_sprite.png');
 	background-position: 0 0;
+	top: 375px;
 	}
 
 .finish_quiz:hover { background-position: 0 -100px; }
@@ -170,7 +177,7 @@ a {
 	width: 250px !important;
 	height: 24px;
 	padding: 2px 10px;
-	margin: 0 15px 0 0;
+	margin: 0 12px 0 0;
 	background: #fcbc53;
 	border: 3px solid #FFF;
 	-webkit-border-radius: 0;
@@ -183,7 +190,7 @@ a {
 	font-family: 'Copse', serif;
 	}
 
-#submission_email { margin: 0 22px 0 8px !important; }
+#submission_email { margin: 0 12px 0 0 !important; }
 
 ::-webkit-input-placeholder {
 	font-size: 16px;
@@ -214,7 +221,7 @@ textarea.error { border: 3px solid #ba0f39; }
 
 #content input.right { margin: 0; }
 
-.form_row { float: left; margin: 20px 0; }
+.form_row { float: left; margin-bottom: 12px; margin-left: 10px;}
 
 .selectBox-dropdown { margin: 0; }
 
@@ -231,15 +238,15 @@ textarea {
 	width: 568px;
 	height: 90px;
 	margin: auto;
-	text-align: center;
 	padding: 10px;
 	background-color: transparent;
 	border: 3px solid #FFF;
 	line-height: 24px;
-	font-size: 16px;
-	line-height: 16px;
+	font-size: 14px;
+	line-height: 24px;
 	color: #231F20;
 	font-family: 'Copse', serif;
+	margin-bottom: 45px;
 	}
 
 /* PAGES */
@@ -253,7 +260,7 @@ textarea {
 	}
 
 h2 { font-size: 16px; font-weight: bold;line-height: 16px; }
-h2.huge { font-size: 25px; line-height: 16px;}
+h2.huge { font-size: 25px; line-height: 25px;}
 h3{ font-size: 14px; font-weight: bold; line-height: 14px;}
 p { font-size: 12px; font-weight: bold; margin: 0;line-height: 12px; }
 
@@ -274,6 +281,7 @@ p { font-size: 12px; font-weight: bold; margin: 0;line-height: 12px; }
 	background-image: url('/assets/the_mountain_america.png');
 	background-repeat: no-repeat;
 	text-indent: -9999px;
+	margin-top: 5px;
 	}
 
 #homepage .retirement {
@@ -284,6 +292,7 @@ p { font-size: 12px; font-weight: bold; margin: 0;line-height: 12px; }
 	background-image: url('/assets/retirement.png');
 	background-repeat: no-repeat;
 	text-indent: -9999px;
+	margin-top: 7px;
 	}
 
 #homepage .quiz {
@@ -294,22 +303,27 @@ p { font-size: 12px; font-weight: bold; margin: 0;line-height: 12px; }
 	background-image: url('/assets/quiz.png');
 	background-repeat: no-repeat;
 	text-indent: -9999px;
+	margin-top: 8px;
 	}
 
-#homepage .get_started { margin: 25px auto 0; }
+#homepage .get_started { margin: 13px auto 0; }
 
-#homepage h2 { font-size: 20px;line-height: 20px; }
-#homepage h3 { font-size: 14px;line-height: 14px; }
-#homepage p { font-size: 12px;line-height: 12px; }
+#homepage h2 { font-size: 20px;line-height: 20px; margin-top: 6px; margin-bottom: 0px;}
+#homepage h3 { font-size: 14px;line-height: 14px; margin-top: 13px; }
+#homepage p { font-size: 12px;line-height: 12px; margin-top: 9px;}
+
+/* INFORMATION */
 
 #information {
-	padding: 50px 0 0 0;
 	text-align: center;
 	}
+#information h2{
+	margin-top: 53px;
+	margin-bottom: 0px;
+}
+#information_form { margin: 27px 0 0 0; }
 
-#information_form { margin: 20px 0 0 0; }
-
-#required_span { opacity: 0; font-size: 14px; margin: 15px 0 0 0;line-height: 14px; }
+#required_span { opacity: 0; font-size: 14px; line-height: 14px; margin-top: 20px; margin-bottom: 20px;}
 
 #feeds {
 	width: 100%;
@@ -319,15 +333,19 @@ p { font-size: 12px; font-weight: bold; margin: 0;line-height: 12px; }
 	border-bottom: 3px solid #ba0f39;
 	}
 
-#feed_wrapper { width: 558px !important; margin: 0 auto; }
+#feed_wrapper { width: 700px !important; margin: 0 auto; }
 
-.feed_container { display: none; width: 558px !important; }
+.feed_container { display: none; width: 700px !important; }
 
-#feeds h3 { margin: 29px 0 10px 0; }
+#feeds h3 { margin: 41px 0 10px 0; font-family: 'Arvo', serif; font-size: 17px;}
+
+#feeds p {font-family: 'Copse', serif; font-weight: normal; font-size: 16px; }
 
 /* QUESTION PAGE */
 
-.question_container { position: relative; }
+.question_container { position: relative; top: -16px;
+	left: 15px;
+}
 
 .question_container .btn {
 	position: absolute;
@@ -349,6 +367,7 @@ p { font-size: 12px; font-weight: bold; margin: 0;line-height: 12px; }
 	line-height: 44px;
 	text-shadow: 5px 4px 0px #FFF;
 	filter: dropshadow(color=#FFF, offx=2, offy=2);
+
 	}
 
 .question_number h2 span { font-size: 75px; line-height: 75px;}
@@ -361,19 +380,25 @@ p { font-size: 12px; font-weight: bold; margin: 0;line-height: 12px; }
 	background-image: url('/assets/over_question.png');
 	}
 
-.question_content { font-size: 18px !important; line-height: 18px; }
+.question_content { font-size: 18px !important; line-height: 18px; margin-top: 35px; margin-left: 12px;}
 
-.answers { position: relative; height: 260px; margin: 35px 0 0 39px; }
 
+
+.answers { position: relative; height: 260px; margin: 40px 0 0 12px; }
 .answer_choice {
 	position: relative;
 	float: left;
-	width: 635px;
-	margin: 0 0 15px 0;
+	width: 660px;
+	padding-top: ;
+	margin: 0 0 5px 0;
 	font-size: 20px;
 	line-height: 20px;
 	opacity: 0;
 	}
+	
+.answers p { font-size: 14px; font-weight: normal; line-height:20px;}
+
+
 
 .answer_choice.a { margin-left: 300px; }
 .answer_choice.b { margin-left: 350px; }
@@ -430,6 +455,8 @@ p { font-size: 12px; font-weight: bold; margin: 0;line-height: 12px; }
 	font-size: 16px;
 	line-height: 16px;
 	font-weight: normal;
+	margin-top: 5px;
+	margin-left: 10px;
 	}
 
 .response_text {
@@ -439,10 +466,11 @@ p { font-size: 12px; font-weight: bold; margin: 0;line-height: 12px; }
 	line-height: 13px;
 	}
 
+
 .answered_correctly, 
 .answered_incorrectly {
 	position: absolute;
-	bottom: 22px; left: 205px;
+	bottom: 24px; left: 215px;
 	font-size: 21px;
 	line-height: 28px;
 	}
@@ -469,11 +497,19 @@ p { font-size: 12px; font-weight: bold; margin: 0;line-height: 12px; }
 	text-align: center;
 	}
 
-#grade_container { position: relative; }
+#grade_container { position: relative; margin-bottom: 23px; }
+
+#grade_container a {
+	color: #786a6d}
+
+#grade_container a:hover {
+	color: #231F20
+}
+
 
 .grade_text {
 	font-size: 69px;
-	line-height: 69px;
+	line-height: 55px;
 	font-weight: bold;
 	text-transform: uppercase;
 	text-shadow: 6px 7px 0px #FFF;
@@ -482,15 +518,20 @@ p { font-size: 12px; font-weight: bold; margin: 0;line-height: 12px; }
 
 #grade_amount { font-size: 93px;line-height: 93px; }
 
-#questions_right { font-size: 45px;line-height: 45px; }
+#questions_right { font-size: 45px;line-height: 45px;text-shadow: 5px 4px 0px #FFF; }
 
-#grade_container h2 { font-size: 21px;line-height: 21px; text-transform: uppercase; }
+#grade_container h2 { font-size: 21px;line-height: 21px; text-transform: uppercase; margin-top:30px; margin-bottom: 19px;}
 
-#grade_container h2.red { font-size: 18px;line-height: 18px; }
+#grade_container p.black.arvo {
+	margin-top: 8px;
+}
+
+#grade_container h2.red { font-size: 18px;line-height: 18px; text-transform:none;margin-top: 15px; margin-bottom: 12px;}
+
 
 #grade_letter { font-size: 30px;line-height: 30px; }
 
-#grade_section .second_line { margin: 0 0 15px 0; }
+#grade_section .second_line { margin: 0 0 23px 0; }
 
 .buttons { width: 415px; height: 70px; margin: 0 auto; }
 
@@ -498,9 +539,9 @@ p { font-size: 12px; font-weight: bold; margin: 0;line-height: 12px; }
 
 .buttons .retake_quiz { margin: 0 25px 0 0; }
 
-.bad_promo { margin: 20px 0 0 0; }
 
-#promo_container { padding: 50px 0 0 0; text-align: center; }
+
+#promo_container { text-align: center; }
 
 #promo_container input {
 	float: none;
@@ -511,12 +552,17 @@ p { font-size: 12px; font-weight: bold; margin: 0;line-height: 12px; }
 	line-height: 27px;
 	font-weight: bold;
 	text-align: center;
+	font-weight:normal;
 	text-transform: uppercase;
 	}
 
-#promo_container .h2 { font-size: 19px;line-height: 19px; }
+#promo_container h2 { font-size: 19px;line-height: 19px; margin-bottom: 38px; }
 
-#promo_code { margin: 0 auto; font-weight: normal; }
+
+.bad_promo { margin: 20px 0 0 0;}
+
+
+#promo_code { margin: 0 auto; font-weight: normal;}
 
 .congratulations_text {
 	position: relative;
@@ -536,6 +582,7 @@ p { font-size: 12px; font-weight: bold; margin: 0;line-height: 12px; }
 	text-indent: -9999px;
 	background-image: url('/assets/enter_prize_code.png');
 	background-repeat: no-repeat;
+	margin-top: 45px;
 	}
 
 .find_out {
@@ -546,6 +593,8 @@ p { font-size: 12px; font-weight: bold; margin: 0;line-height: 12px; }
 	text-indent: -9999px;
 	background-image: url('/assets/find_out.png');
 	background-repeat: no-repeat;
+	margin-top: 2px;
+	margin-bottom: 15px;
 	}
 
 .tell_us {
@@ -556,22 +605,40 @@ p { font-size: 12px; font-weight: bold; margin: 0;line-height: 12px; }
 	text-indent: -9999px;
 	background-image: url('/assets/tell_us_whats_on_your.png');
 	background-repeat: no-repeat;
+	margin-top: 3px;
 	}
 
 .retirement_bucket_list {
 	position: relative;
 	margin: 0 auto;
-	width: 739px;
-	height: 81px;
+	width: 700px;
+	height: 55px;
+	padding: 0;
 	text-indent: -9999px;
-	background-image: url('/assets/retirement_bucket_list.png');
-	background-repeat: no-repeat;
-	}
+	background: url('/assets/retirement_bucket_list.png') no-repeat scroll -19px -14px;
+	margin-top: 8px;
+}
 
-#prize_container { padding: 50px 0 0 0; text-align: center; }
+#prize_container { padding: 57px 0 0 0; text-align: center; }
 
-#bucket_list { text-align: center; }
+#prize_container h2 {
+	margin-top: 12px;
+}
 
-.grade_replacement3 a { display: block; }
+#prize_container p {
+	margin-top: 11px;
+	font-size: 14px;
+}
+
+#prize_container .retake_quiz {
+	margin-top: 30px;
+}
+#bucket_list { text-align: center;}
+
+#bucket_list h2{
+	line-height:25px; margin-top: 20px; margin-bottom: 20px;
+}
+
+
 
 #textarea_wrapper, #promo_code_wrapper { position: relative; margin: 0 auto;}
