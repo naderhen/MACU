@@ -5,6 +5,8 @@
 .answer_choice,
 .answer_choice.deselected { opacity: 1 !important; }
 
+#logo { margin: 0 auto; }
+
 #frame_container { margin-top: 70px; }
 
 #frame_left { background-position: 0px 0px; }
@@ -14,6 +16,8 @@
 #logo { display: block; }
 .over_grunge { display: none; }
 
+
+.take_the_quiz { clear: both; }
 
 .question_number h2,
 .grade_text,
@@ -39,3 +43,5 @@
 #grade_container h2.red { font-size: 16px; } 
 
 #questions_right { display: block !important; }
+
+.bad_promo { visibility: hidden; }

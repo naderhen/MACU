@@ -252,8 +252,8 @@ $(document).ready(function() {
 		var self = $(this),
 			user_id = $('#content').attr('data-user-id'),
 			text = $('#bucket_list_text').val();
-		
-		if (text.length) {
+	
+		if (text.length && text != 'When I retire I want to...') {
 			$.ajax({
 				url: 'bucket_list/' + user_id,
 				type: 'POST',
@@ -285,7 +285,11 @@ $(document).ready(function() {
 					$('#prize_container').find('#prize_name').html(data.prize);
 					getNext(self.parents('.block'));
 				} else {
-					self.parents('.block').find('.bad_promo').animate({opacity: 1},'slow');
+					if (ie) {
+						self.parents('.block').find('.bad_promo').css('visibility', 'visible');
+					} else {
+						self.parents('.block').find('.bad_promo').animate({opacity: 1},'slow');
+					}
 				}
 			}
 		});
