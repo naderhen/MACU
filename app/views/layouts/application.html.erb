@@ -10,8 +10,11 @@
     <link href='http://fonts.googleapis.com/css?family=Bevan' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Arvo:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Copse' rel='stylesheet' type='text/css'>
-    <%= stylesheet_link_tag    "application" %>
+    <%= stylesheet_link_tag "application-all", :media => "all" %>
     <%= javascript_include_tag "application" %>
+    <!--[if lte IE 8]>
+      <%= stylesheet_link_tag "application-ie", :media => "all" %>
+    <![endif]-->
     <%= csrf_meta_tags %>
   </head>
   <body class="<%= params[:controller] %>">

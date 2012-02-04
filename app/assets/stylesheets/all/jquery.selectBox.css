@@ -4,6 +4,8 @@
 	display: inline-block;
 	cursor: default;
 	text-align: left;
+	padding: 4px 0 0 10px;
+	width: 261px !important;
 }
 
 .selectBox-dropdown.selectBox-menuShowing {

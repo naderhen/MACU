@@ -9,5 +9,6 @@ ActiveAdmin.register Submission do
   	column :promo_code
   	column :bucket_list
   	column :prize
+    default_actions
   end
 end

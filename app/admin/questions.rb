@@ -7,6 +7,7 @@ ActiveAdmin.register Question do
 		end
 		column :correct_answer_response
 		column :wrong_answer_response
+		column :joke
 		default_actions
 	end
 
@@ -15,6 +16,7 @@ ActiveAdmin.register Question do
 	  	f.input :content, :as => :string
 	  	f.input :correct_answer_id, :as => :select, :collection => f.object.answers
 	  	f.input :correct_answer_response, :input_html => { :rows => 2 }
+	  	f.input :joke
 	  end
 
 	  f.has_many :answers do |answer|

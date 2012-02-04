@@ -1,0 +1,20 @@
+#frame_container { margin-top: 70px; }
+
+#frame_left { background-position: 0px 0px; }
+#frame_right { background-position: -20px 0; }
+#footer {bottom: 0;}
+
+#logo { display: block; }
+.over_grunge { display: none; }
+
+
+.question_number h2,
+.grade_text,
+#questions_right {
+	text-shadow: none;
+	filter: none;
+	}
+
+#feeds { background: transparent;}
+#feed_wrapper { background: transparent; height: 100%; }
+.feed_container { height: 100%; background: transparent;}

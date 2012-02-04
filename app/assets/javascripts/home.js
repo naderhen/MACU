@@ -53,19 +53,19 @@ function updateGrade(score){
 	};	
 
 	if (grades[score] == 'A') {
-		$('.grade_replacement1').html('High Five! You scored an ' + grades[score]);
+		$('.grade_replacement1').html('High Five! You scored an <span id="grade_letter">' + grades[score] + '</span>');
 		$('.grade_replacement2').html('You passed this quiz with flying colors right at the top of the class.');
 		$('.grade_replacement3').html('Looks like we\'ve got ourselves on true retirement braniac!');
 	} else if ( grades[score] == 'B') {
-		$('.grade_replacement1').html('Nice Work! You scored a ' + grades[score]);
+		$('.grade_replacement1').html('Nice Work! You scored a <span id="grade_letter">' + grades[score] + '</span>');
 		$('.grade_replacement2').html('Give yourself a pat on the back.');
 		$('.grade_replacement3').html('You’re understanding of retirement savings is impressive.');
 	} else if (grades[score] == 'C') {
-		$('.grade_replacement1').html('Not too shabby. You scored a ' + grades[score]);
+		$('.grade_replacement1').html('Not too shabby. You scored a <span id="grade_letter">' + grades[score] + '</span>');
 		$('.grade_replacement2').html('Looks like you’ve got the retirement fundamentals down pat.');
 		$('.grade_replacement3').html('But remember – there\'s always room for improvement.');
 	} else if (grades[score] == 'D') {
-		$('.grade_replacement1').html('We know you\'ll rally next time. You scored a ' + grades[score]);
+		$('.grade_replacement1').html('We know you\'ll rally next time. You scored a <span id="grade_letter">' + grades[score] + '</span>');
 		$('.grade_replacement2').html('Check out the links below to learn more about the fundamentals of Retirement Planning:');
 		$('.grade_replacement3').html('<a href="http://www.ssa.gov/retirement/" target="_blank">http://www.ssa.gov/retirement/</a><a href="http://www.usa.gov/Topics/Seniors/Retirement.shtml" target="_blank">http://www.usa.gov/Topics/Seniors/Retirement.shtml</a>');
 	} else {
@@ -78,20 +78,23 @@ function updateGrade(score){
 }
 
 $(document).ready(function() {
+	var ie = $.browser.msie;
 
 	$('input[placeholder], textarea[placeholder]').placeholder();
 
-	setTimeout(function() {
-		$('#frame_container').animate(
-			{ marginTop: '70px', opacity: 1 },{ duration: 1300, easing: 'swing', complete: function() {
-				$('#frame_left').animate( { backgroundPosition: '0px 0px' }, 1000);
-				$('#frame_right').animate( { backgroundPosition: '-20px 0' }, 1000, function() {
-					$('#homepage').animate({opacity: 1},'slow');
-					$('#footer').animate({bottom: 0}, '1000', function() { $('#logo').fadeIn(2000);});
+	if (!ie) {
+		setTimeout(function() {
+			$('#frame_container').animate(
+				{ marginTop: '70px', opacity: 1 },{ duration: 1300, easing: 'swing', complete: function() {
+					$('#frame_left').animate( { backgroundPosition: '0px 0px' }, 1000);
+					$('#frame_right').animate( { backgroundPosition: '-20px 0' }, 1000, function() {
+						$('#homepage').animate({opacity: 1},'slow');
+						$('#footer').animate({bottom: 0}, '1000', function() { $('#logo').fadeIn(2000);});
+					});
+					}
 				});
-				}
-			});
-	}, 1000);
+		}, 1000);
+	}
 	
 	// Init
 	
@@ -177,13 +180,14 @@ $(document).ready(function() {
 			$(this).attr('data-answer-hash', MD5_hexhash($(this).attr('data-answer-id')));	
 		});
 
-		var correct_choice = container.find('.answer_choice[data-answer-hash="' + container.attr('data-correct-answer-id') + '"]'),
-			wrong_choices = correct_choice.siblings();
 		
-		correct_choice.removeClass('selected deselected');
-		wrong_choices.addClass('deselected');
-		// CORRECT
-		if (container.attr('data-selected-hash') === container.attr('data-correct-answer-id')) {
+		
+		
+
+		if(container.attr('data-joke') == 'true') {
+			var correct_choice = container.find('.answer_choice.selected'),
+				wrong_choices = correct_choice.siblings();
+
 			correct_choice.find('.mark').remove();
 			correct_choice.append('<div class="mark check"></div>');
 			wrong_choices.css('opacity', .5);
@@ -191,15 +195,31 @@ $(document).ready(function() {
 			correct_amount++
 			updateGrade(correct_amount);
 		} else {
-		// WRONG
-			correct_choice.find('.mark').remove();
-			correct_choice.append('<div class="mark circle"></div>');
-			wrong_choices.find('.mark').remove();
-			wrong_choices.append('<div class="mark ex"></div>');
-			wrong_choices.find('p').css('text-decoration', 'line-through');
-			container.find('.answered_incorrectly').fadeIn('slow');
-			updateGrade(correct_amount);
-		};
+			var correct_choice = container.find('.answer_choice[data-answer-hash="' + container.attr('data-correct-answer-id') + '"]'),
+				wrong_choices = correct_choice.siblings();
+
+				correct_choice.removeClass('selected deselected');
+				wrong_choices.addClass('deselected');
+			// CORRECT
+			if (container.attr('data-selected-hash') === container.attr('data-correct-answer-id')) {
+				correct_choice.find('.mark').remove();
+				correct_choice.append('<div class="mark check"></div>');
+				wrong_choices.css('opacity', .5);
+				container.find('.answered_correctly').fadeIn('slow');
+				correct_amount++
+				updateGrade(correct_amount);
+			} else {
+			// WRONG
+				correct_choice.find('.mark').remove();
+				correct_choice.append('<div class="mark circle"></div>');
+				wrong_choices.find('.mark').remove();
+				wrong_choices.append('<div class="mark ex"></div>');
+				wrong_choices.find('p').css('text-decoration', 'line-through');
+				container.find('.answered_incorrectly').fadeIn('slow');
+				updateGrade(correct_amount);
+			};	
+		}
+		
 
 		setTimeout(function(){
 			var correct_offset = correct_choice.position().top,
