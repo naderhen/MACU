@@ -15,7 +15,7 @@ Macu::Application.configure do
   config.assets.compress = true
 
   # Don't fallback to assets pipeline if a precompiled asset is missed
-  config.assets.compile = false
+  config.assets.compile = true
   config.assets.precompile += %w[active_admin.css active_admin.js]
   config.assets.precompile += %w(application-all.css application-print.css application-ie.css)
 
