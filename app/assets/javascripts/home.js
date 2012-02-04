@@ -23,7 +23,7 @@ function getNext(current){
 		}
 
 		if (next.find('select').length) {
-			$('select').selectBox();
+			next.find('select').selectBox();
 		}
 	})
 	
@@ -81,7 +81,7 @@ $(document).ready(function() {
 	var ie = $.browser.msie;
 
 	$('input[placeholder], textarea[placeholder]').placeholder();
-
+	
 	if (!ie) {
 		setTimeout(function() {
 			$('#frame_container').animate(

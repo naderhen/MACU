@@ -1,3 +1,10 @@
+#frame_container,
+.submit_answer,
+.block,
+#required_span,
+.answer_choice,
+.answer_choice.deselected { opacity: 1 !important; }
+
 #frame_container { margin-top: 70px; }
 
 #frame_left { background-position: 0px 0px; }
@@ -18,3 +25,17 @@
 #feeds { background: transparent;}
 #feed_wrapper { background: transparent; height: 100%; }
 .feed_container { height: 100%; background: transparent;}
+
+.question_content { font-size: 16px !important; }
+
+.answers { margin-top: 10px !important; }
+
+.answer_choice { margin-bottom: 0; }
+
+.answered_correctly, .answered_incorrectly { bottom: 28px; }
+
+.response_text { width: 635px; }
+
+#grade_container h2.red { font-size: 16px; } 
+
+#questions_right { display: block !important; }
