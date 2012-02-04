@@ -16,7 +16,7 @@ Macu::Application.configure do
 
   # Don't fallback to assets pipeline if a precompiled asset is missed
   config.assets.compile = true
-  config.assets.precompile += ['active_admin.css', 'active_admin.js', 'application-all.css', 'application-ie.css']
+  config.assets.precompile += %w[application-all.css application-ie.css]
 
   # Generate digests for assets URLs
   config.assets.digest = true
