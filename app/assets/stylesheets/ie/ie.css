@@ -3,7 +3,8 @@
 .block,
 #required_span,
 .answer_choice,
-.answer_choice.deselected { opacity: 1 !important; }
+.answer_choice.deselected,
+.bad_promo { opacity: 1 !important; }
 
 #logo { margin: 0 auto; }
 

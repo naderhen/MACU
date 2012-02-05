@@ -542,7 +542,7 @@ p { font-size: 12px; font-weight: bold; margin: 0;line-height: 12px; }
 #promo_container h2 { font-size: 19px;line-height: 19px; margin-bottom: 38px; }
 
 
-.bad_promo{margin-top: 25px;font-size:14px !important; margin-bottom: 15px !important;}
+.bad_promo{margin-top: 25px;font-size:14px !important; opacity: 0; margin-bottom: 15px !important;}
 
 
 #promo_code { margin: 0 auto; font-weight: normal;}

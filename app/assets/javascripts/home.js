@@ -286,7 +286,7 @@ $(document).ready(function() {
 					getNext(self.parents('.block'));
 				} else {
 					if (ie) {
-						self.parents('.block').find('.bad_promo').css('visibility', 'visible');
+						$('.bad_promo').css('visibility', 'visible');
 					} else {
 						self.parents('.block').find('.bad_promo').animate({opacity: 1},'slow');
 					}
