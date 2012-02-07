@@ -625,3 +625,5 @@ p { font-size: 12px; font-weight: bold; margin: 0;line-height: 12px; }
 .grade_replacement3 a { margin: 0 10px 0 0; }
 
 #textarea_wrapper, #promo_code_wrapper { position: relative; margin: 0 auto;}
+
+.bottom_margin { margin: 0 0 15px 0; }
