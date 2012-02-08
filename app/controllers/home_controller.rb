@@ -3,7 +3,7 @@ class HomeController < ApplicationController
 	
 	def index
 		@users = User.all
-		@questions = Question.all.sample(6)
+		@questions = Question.all.sample(12)
 		@feeds = Feed.all
 		@indices = {
 			1 => 'a',
