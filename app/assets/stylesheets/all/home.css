@@ -539,10 +539,10 @@ p { font-size: 12px; font-weight: bold; margin: 0;line-height: 12px; }
 	text-transform: uppercase;
 	}
 
-#promo_container h2 { font-size: 19px;line-height: 19px; margin-bottom: 38px; }
+#promo_container h2 { font-size: 19px;line-height: 19px; }
 
 
-.bad_promo{margin-top: 25px;font-size:14px !important; opacity: 0; margin-bottom: 15px !important;}
+.bad_promo{margin-top: 15px;font-size:14px !important; opacity: 0; margin-bottom: 15px !important;}
 
 
 #promo_code { margin: 0 auto; font-weight: normal;}
@@ -624,6 +624,6 @@ p { font-size: 12px; font-weight: bold; margin: 0;line-height: 12px; }
 
 .grade_replacement3 a { margin: 0 10px 0 0; }
 
-#textarea_wrapper, #promo_code_wrapper { position: relative; margin: 0 auto;}
+#textarea_wrapper, #promo_code_wrapper { position: relative; margin: 15px auto;}
 
 .bottom_margin { margin: 0 0 15px 0; }
