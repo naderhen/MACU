@@ -297,6 +297,13 @@ $(document).ready(function() {
 		
 	});
 
+	$('#promo_code').keypress(function() {
+		var self = $(this),
+			container = self.parents('.block');
+
+		container.find('.did_i_win_dead').addClass('did_i_win').removeClass('did_i_win_dead');
+	});
+
 	$('.did_i_win_dead').live('click', function() {
 		return false;
 	});
