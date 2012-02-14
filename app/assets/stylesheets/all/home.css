@@ -155,8 +155,11 @@ a {
 
 
 
-.did_i_win { background-position: -910px 0; }
+.did_i_win{background-position:-910px 0; margin-bottom: 10px;}
 .did_i_win:hover { background-position: -910px -100px; }
+
+.did_i_win_dead{background-position:-910px 0; margin-bottom: 10px;}
+.did_i_win_dead:hover { background-position: -910px -100px; }
 
 .finish_quiz {background-image: url('/assets/finishquiz_sprite.png'); background-position: -1px 0; top: 375px; }
 
@@ -522,7 +525,7 @@ p { font-size: 12px; font-weight: bold; margin: 0;line-height: 12px; }
 
 .buttons .retake_quiz { margin: 0 25px 0 0; }
 
-
+#promo_container .buttons {margin-top: 10px;}
 
 #promo_container { text-align: center; }
 
@@ -539,10 +542,9 @@ p { font-size: 12px; font-weight: bold; margin: 0;line-height: 12px; }
 	text-transform: uppercase;
 	}
 
-#promo_container h2 { font-size: 19px;line-height: 19px; }
+#promo_container h2{font-size:19px;line-height:19px;margin-bottom:5px; margin-top: 5px;}
 
-
-.bad_promo{margin-top: 15px;font-size:14px !important; opacity: 0; margin-bottom: 15px !important;}
+.bad_promo{margin-top:15px;font-size:13px !important;opacity:0;}
 
 
 #promo_code { margin: 0 auto; font-weight: normal;}

@@ -180,10 +180,6 @@ $(document).ready(function() {
 			$(this).attr('data-answer-hash', MD5_hexhash($(this).attr('data-answer-id')));	
 		});
 
-		
-		
-		
-
 		if(container.attr('data-joke') == 'true') {
 			var correct_choice = container.find('.answer_choice.selected'),
 				wrong_choices = correct_choice.siblings();
@@ -219,6 +215,12 @@ $(document).ready(function() {
 				updateGrade(correct_amount);
 			};	
 		}
+
+		if (container.next().find('.answers').length) {
+			button.replaceWith('<a href="#" class="btn next next_question">Next Question</a>');
+		} else {
+			button.replaceWith('<a href="#" class="btn next finish_quiz">Finish Quiz</a>');
+		}
 		
 
 		setTimeout(function(){
@@ -238,11 +240,6 @@ $(document).ready(function() {
 
 			correct_choice.animate({ top: 0 }, 'slow', function(){ response_text.appendTo(answer_section).fadeIn('slow'); });
 
-			if (container.next().find('.answers').length) {
-				button.replaceWith('<a href="#" class="btn next next_question">Next Question</a>');
-			} else {
-				button.replaceWith('<a href="#" class="btn next finish_quiz">Finish Quiz</a>');
-			}
 
 		}, 1000);
 		return false;
@@ -273,26 +270,34 @@ $(document).ready(function() {
 	});
 
 	$('.did_i_win').live('click', function() {
-		var self = $(this),
-			code = $('#promo_code').val(),
-			user_id = $('#content').attr('data-user-id');
+			var self = $(this),
+				code = $('#promo_code').val(),
+				user_id = $('#content').attr('data-user-id');
 
-		$.ajax({
-			url: 'check/' + code + '/' + user_id,
-			dataType: 'json',
-			success: function(data) {
-				if(data) {
-					$('#prize_container').find('#prize_name').html(data.prize);
-					getNext(self.parents('.block'));
-				} else {
-					if (ie) {
-						$('.bad_promo').css('visibility', 'visible');
+			self.removeClass('did_i_win');
+			self.addClass('did_i_win_dead');
+
+			$.ajax({
+				url: 'check/' + code + '/' + user_id,
+				dataType: 'json',
+				success: function(data) {
+					if(data) {
+						$('#prize_container').find('#prize_name').html(data.prize);
+						getNext(self.parents('.block'));
 					} else {
-						self.parents('.block').find('.bad_promo').animate({opacity: 1},'slow');
+						if (ie) {
+							$('.bad_promo').css('visibility', 'visible');
+						} else {
+							self.parents('.block').find('.bad_promo').animate({opacity: 1},'slow');
+						}
 					}
 				}
-			}
-		});
+			});
+			return false;
+		
+	});
+
+	$('.did_i_win_dead').live('click', function() {
 		return false;
 	});
 
