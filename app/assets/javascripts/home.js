@@ -297,7 +297,7 @@ $(document).ready(function() {
 		
 	});
 
-	$('#promo_code').keypress(function() {
+	$('#promo_code').live('paste keyup', function() {
 		var self = $(this),
 			container = self.parents('.block');
 
