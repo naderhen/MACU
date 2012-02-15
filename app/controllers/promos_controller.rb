@@ -1,7 +1,7 @@
 class PromosController < InheritedResources::Base
 
 	def check
-		@promo = Promo.where(code: params[:code], active: true)
+		@promo = Promo.where(code: params[:code].upcase, active: true)
 		@submission = Submission.find(params[:user_id])
 
 		if @promo.any? &&
